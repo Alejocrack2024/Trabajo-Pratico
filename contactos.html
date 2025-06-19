@@ -1,79 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactos</title>
-    <link rel="stylesheet" href="CSS/style.css">
-    <script src="JS/script.js"> defer</script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Numans&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contáctanos</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <script src="JS/script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Numans&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container3"><header class="header3">
-        <h1>Contactos</h1>
+  <div class="container3">
+
+    <header class="header3">
+      <h1>Contáctanos</h1>
     </header>
 
     <nav class="nav3">
-        <H2>Extras:</H2>
-            <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <a href="nosotros.html">Nosotros</a>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <a href="clientes.html">Clientes</a>
-                </li>
-            </ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="clientes.html">Clientes</a></li>
+      </ul>
     </nav>
 
     <section class="section3">
-  <form id="formContacto">
-    <div class="grupo">
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" required>
-    </div>
+      <p class="intro">
+        ¡Nos encantaría saber de ti! Si tienes consultas, sugerencias o necesitas soporte, completa el siguiente formulario y nos pondremos en contacto a la brevedad.
+      </p>
 
-    <div class="grupo">
-      <label for="email">Correo electrónico</label>
-      <input type="email" id="email" required>
-    </div>
+      <h2>Formulario de Contacto</h2>
+      <form id="formContacto">
+        <div class="grupo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" required>
+        </div>
 
-    <div class="grupo">
-      <label for="medio">Cómo te enteraste de nuestra empresa</label>
-      <select id="medio" required>
-        <option value="">Seleccione</option>
-        <option value="redes">Redes</option>
-        <option value="comentarios">Comentarios</option>
-        <option value="otro">Otro</option>
-      </select>
-    </div>
-    <div class="grupo" id="bloqueEspecifique">
-      <label for="especifique">Especifique</label>
-      <textarea id="especifique" rows="3"></textarea>
-    </div>
+        <div class="grupo">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" required>
+        </div>
 
-    <div class="grupo">
-      <label for="mensaje">Mensaje</label>
-      <textarea id="mensaje" rows="4" required></textarea>
-    </div>
-    <button type="submit" onclick="alert('Mensaje enviado')">Enviar</button>
-  </form>
+        <div class="grupo">
+          <label for="medio">Cómo te enteraste de nuestra empresa</label>
+          <select id="medio" required>
+            <option value="">Seleccione</option>
+            <option value="redes">Redes</option>
+            <option value="comentarios">Comentarios</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="grupo" id="bloqueEspecifique" style="display: none;">
+          <label for="especifique">Especifique</label>
+          <textarea id="especifique" rows="3"></textarea>
+        </div>
+
+        <div class="grupo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" rows="4" required></textarea>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
     </section>
 
     <footer class="footer3">
-        <p>© 2025 FlashEnvíos. Todos los derechos reservados.</p>
-        <ul><li><p>Términos y condiciones</p></li></ul>
-        <ul><li><p>Política de privacidad</p></li></ul>
-        </ul>
+      <p>© 2025 FlashEnvíos. Todos los derechos reservados.</p>
     </footer>
-</div>
+
+  </div>
 </body>
 </html>

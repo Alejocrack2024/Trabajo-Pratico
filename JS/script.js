@@ -1,29 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOMContentLoaded disparado en script externo');
+  const formulario = document.getElementById('formContacto');
   const medioSelect = document.getElementById('medio');
   const bloqueEspecifique = document.getElementById('bloqueEspecifique');
-  if (!medioSelect || !bloqueEspecifique) {
-    console.error('No se encontraron "medio" o "bloqueEspecifique"');
-    return;
-  }
-  const textarea = bloqueEspecifique.querySelector('textarea');
+
+  if (!formulario || !medioSelect || !bloqueEspecifique) return;
+
+  const textareaEspecifique = bloqueEspecifique.querySelector('textarea');
+  const inputNombre = document.getElementById('nombre');
+  const inputEmail = document.getElementById('email');
+  const textareaMensaje = document.getElementById('mensaje');
+
   function toggleEspecifique() {
-    console.log('toggleEspecifique:', medioSelect.value);
     const isOtro = medioSelect.value === 'otro';
     bloqueEspecifique.classList.toggle('escondido', !isOtro);
     bloqueEspecifique.hidden = !isOtro;
     bloqueEspecifique.setAttribute('aria-hidden', String(!isOtro));
-    if (textarea) {
+    if (textareaEspecifique) {
       if (isOtro) {
-        textarea.focus();
-        textarea.setAttribute('required', '');
+        textareaEspecifique.focus();
+        textareaEspecifique.setAttribute('required', '');
       } else {
-        textarea.value = '';
-        textarea.removeAttribute('required');
+        textareaEspecifique.value = '';
+        textareaEspecifique.removeAttribute('required');
       }
     }
   }
+
   toggleEspecifique();
   medioSelect.addEventListener('change', toggleEspecifique);
-  console.log('Listener añadido en script externo');
+
+  formulario.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    if (!formulario.checkValidity()) {
+      formulario.reportValidity();
+      return;
+    }
+
+    alert('Mensaje enviado correctamente');
+    formulario.reset();
+    toggleEspecifique();
+  });
 });
